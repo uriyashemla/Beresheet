@@ -4,7 +4,7 @@
  * @author ben-moshe
  *
  */
-public class Bereshit_101 {
+public class Bereshit_Spaceship {
 	public static final double WEIGHT_EMP = 165; // kg
 	public static final double WEIGHT_FULE = 420; // kg
 	public static final double WEIGHT_FULL = WEIGHT_EMP + WEIGHT_FULE; // kg
