@@ -6,7 +6,7 @@ public class Moon {
 	public static final double EQ_SPEED = 1700;// m/s
 
 	public static final int LANDING_AREA_X = 1012;
-	public static final int LANDING_AREA_Y = 650;
+	public static final int LANDING_AREA_Y = 550;
 	public static final Point realDestinationPoint = new Point(268467, 0);
 
 	public static double getAcc(double speed) {

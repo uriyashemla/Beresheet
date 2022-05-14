@@ -4,6 +4,7 @@ public class Bereshit_Spaceship {
 
 	public final double WEIGHT_EMP = 165; // kg
 	public final double WEIGHT_FULE = 420; // kg
+
 	public final double WEIGHT_FULL = WEIGHT_EMP + WEIGHT_FULE; // kg
 	public final static double MAIN_ENG_F = 430; // N
 	public final static double SECOND_ENG_F = 25; // N
@@ -31,10 +32,10 @@ public class Bereshit_Spaceship {
 	public Bereshit_Spaceship() {
 		vs = 24.8;
 		hs = 932;
-		dist = 181 * 1000;
 		ang = 58.3;
 		alt = 13748; // 30 k"m
 		lat = 0;
+		dist = (new Point(lat, alt).distance2D(Moon.realDestinationPoint));
 		time = 0;
 		dt = 1;
 		acc = 0;
@@ -44,7 +45,7 @@ public class Bereshit_Spaceship {
 		pid = new PID(0.7, 1, 0.01, 1, 0);
 		NN = 0.7;
 
-		location = new Point(0, 100);
+		location = new Point(0, 0);
 
 		engines = new Engines[8];
 		engines[0] = new Engines("North1", 0);
@@ -173,14 +174,14 @@ public class Bereshit_Spaceship {
 
 	public void updateEngines() {
 		if (alt < 2000 && ang > 0) {
-			engines[0].setPower(0.9);
-			engines[1].setPower(0.1);
+			engines[0].setPower(3);
+			engines[1].setPower(0);
 			engines[2].setPower(0);
 			engines[3].setPower(0);
-			engines[4].setPower(0.9);
-			engines[5].setPower(0.1);
-			engines[6].setPower(0.1);
-			engines[7].setPower(0.9);
+			engines[4].setPower(0);
+			engines[5].setPower(0);
+			engines[6].setPower(0);
+			engines[7].setPower(0);
 			ang -= enginesPower() * dt;
 			if (ang < 1) {
 				ang = 0;
@@ -250,14 +251,12 @@ public class Bereshit_Spaceship {
 	}
 
 	public static double accMax(double weight) {
-		return acc(weight, true, 8);
+		return acc(weight, 8);
 	}
 
-	public static double acc(double weight, boolean main, int seconds) {
+	public static double acc(double weight, int seconds) {
 		double t = 0;
-		if (main) {
-			t += Bereshit_Spaceship.MAIN_ENG_F;
-		}
+		t += Bereshit_Spaceship.MAIN_ENG_F;
 		t += seconds * Bereshit_Spaceship.SECOND_ENG_F;
 		double ans = t / weight;
 		return ans;

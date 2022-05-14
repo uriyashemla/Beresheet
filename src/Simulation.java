@@ -1,4 +1,5 @@
 
+
     import java.awt.Color;
     import java.awt.Graphics;
     import java.awt.Image;
@@ -43,6 +44,28 @@
             g.setColor(Color.CYAN);
             g.fillOval(Moon.LANDING_AREA_X, Moon.LANDING_AREA_Y, 40, 15);// Landing area
             g.drawImage(SpacecraftPath, x, y, 25, 25, null);
+            String hsg = String.valueOf(bs.getHS());
+            String nng = String.valueOf(bs.getNN());
+            String timeg = String.valueOf(bs.getTime());
+            String vsg = String.valueOf(bs.getVS());
+            String disg = String.valueOf(bs.getDist());
+            String latg = String.valueOf(bs.getLat());
+            String altg = String.valueOf(bs.getAlt());
+            String angg = String.valueOf(bs.getAng());
+            String weig = String.valueOf(bs.getWeight());
+            String accg = String.valueOf(bs.getAcc());
+            String fug = String.valueOf(bs.getFuel());
+            g.drawString("HS :"+hsg,1000,50);
+            g.drawString("VS :"+vsg,1000,65);
+            g.drawString("NN :"+nng,1000,80);
+            g.drawString("Time :"+timeg,1000,95);
+            g.drawString("Dist :"+disg,1000,110);
+            g.drawString("Lat :"+latg,1000,125);
+            g.drawString("Alt :"+altg,1000,140);
+            g.drawString("Ang :"+angg,1000,155);
+            g.drawString("Weight :"+weig,1000,170);
+            g.drawString("Acc :"+accg,1000,185);
+            g.drawString("Fuel :"+fug,1000,200);
         }
 
         public void loop() {
