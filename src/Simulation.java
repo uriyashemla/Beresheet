@@ -10,10 +10,10 @@
         Bereshit_Spaceship bs;
 
         final Image BackroundPath = new ImageIcon(
-                "C:\\Users\\nadav\\Documents\\GitHub\\Bereshit\\images\\Moon.png")
+                "C:\\Users\\uriya\\Computer Science\\gitFolder\\Bereshit\\images\\Moon.png")
                 .getImage();
         final Image SpacecraftPath = new ImageIcon(
-                "C:\\Users\\nadav\\Documents\\GitHub\\Bereshit\\images\\shuttle2.png")
+                "C:\\Users\\uriya\\Computer Science\\gitFolder\\Bereshit\\images\\shuttle2.png")
                 .getImage();
 
         int NormalizePixel_Y = 40;
