@@ -2,7 +2,7 @@ public class Engines {
     private String side;
     private double power;
 
-    NavigationEngine(String side, double power) {
+    Engines(String side, double power) {
         this.side = side;
         this.power = power;
     }
