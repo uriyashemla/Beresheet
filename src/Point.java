@@ -7,8 +7,9 @@ public class Point {
         this.y = y;
     }
 
-    public double distance2D(Point p2) {        double dx = this.x - p2.x;
-        double dy = this.y - p2.y;
+    public double distance2D(Point p) {
+        double dx = this.x - p.x;
+        double dy = this.y - p.y;
         double t = (dx * dx + dy * dy);
         return Math.sqrt(t);
     }
