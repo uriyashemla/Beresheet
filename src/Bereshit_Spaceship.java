@@ -174,14 +174,14 @@ public class Bereshit_Spaceship {
 
 	public void updateEngines() {
 		if (alt < 2000 && ang > 0) {
-			engines[0].setPower(3);
-			engines[1].setPower(0);
+			engines[0].setPower(0);
+			engines[1].setPower(0.5);
 			engines[2].setPower(0);
 			engines[3].setPower(0);
 			engines[4].setPower(0);
-			engines[5].setPower(0);
-			engines[6].setPower(0);
-			engines[7].setPower(0);
+			engines[5].setPower(0.5);
+			engines[6].setPower(1);
+			engines[7].setPower(1);
 			ang -= enginesPower() * dt;
 			if (ang < 1) {
 				ang = 0;
@@ -204,9 +204,9 @@ public class Bereshit_Spaceship {
 			hs = (hs - h_acc * dt) < 0 ? 0.1 : (hs - h_acc * dt);
 		if (hs < 2 && alt <= 2000)
 			hs = 0;
-		vs = (vs - v_acc * dt) < 2 ? 0.3 : (vs - v_acc * dt);
+		vs = (vs - v_acc * dt) < 2 ? 0.4: (vs - v_acc * dt);
 		if (alt < 15 && vs > 2) {
-			vs = (vs - 2) < 2 ? 0.3 : (vs - 2);
+			vs = (vs - 2) < 2 ? 0.3: (vs - 2);
 		}
 	}
 

@@ -20,8 +20,13 @@ public class PID {
     public double control(double dt, double error) {
         this.sumIntegral += this.I * error * dt;
         double difference = (error - lastError) / dt;
-        double constIntegral = (this.sumIntegral >= min) ? this.sumIntegral : 0;
-        constIntegral = (this.sumIntegral <= max) ? this.sumIntegral : max;
+        double constIntegral;
+        if(this.sumIntegral < min)
+            constIntegral=min;
+        else if(this.sumIntegral > max)
+            constIntegral = max;
+        else
+            constIntegral = this.sumIntegral;
         double output = this.P * error + this.D * difference + constIntegral;
         this.lastError = error;
         return output;
